@@ -47,23 +47,39 @@ const Process = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-celestial-50 to-dorado-50">
+    <section className="py-12 md:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Fondo parallax */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url('https://pusssafgpuizmhkhzsfb.supabase.co/storage/v1/object/public/Imagenes%20Landing%20Libors/Libros/Bodie/Parallax%20entrega%20libro.webp')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          filter: 'brightness(0.3)',
+        }}
+      ></div>
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-gradient-to-r from-celestial-900/80 to-dorado-900/80 z-10"></div>
+      
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-20">
           {/* EDITABLE: Título de la sección */}
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-esperanza-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-6 relative z-20">
             ¿Cómo Funciona?
           </h2>
           {/* EDITABLE: Descripción de la sección */}
-          <p className="text-xl font-source text-esperanza-600 max-w-3xl mx-auto">
+          <p className="text-xl font-source text-white/90 max-w-3xl mx-auto relative z-20">
             Simple, transparente y seguro para que recibas tu libro de esperanza.
           </p>
         </div>
 
         {/* Hoja de ruta gráfica */}
-        <div className="relative mb-10 md:mb-20">
+        <div className="relative mb-10 md:mb-20 z-20">
           {/* Línea conectora para desktop */}
-          <div className="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-celestial-200 via-green-200 via-dorado-200 to-pink-200 rounded-full"></div>
+          <div className="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-white/30 via-white/50 via-white/30 to-white/20 rounded-full"></div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {steps.map((step, index) => (
@@ -73,10 +89,10 @@ const Process = () => {
               >
                 {/* Línea conectora para mobile */}
                 {index < steps.length - 1 && (
-                  <div className="lg:hidden absolute top-20 left-1/2 transform -translate-x-1/2 w-1 h-16 bg-gradient-to-b from-celestial-200 to-transparent"></div>
+                  <div className="lg:hidden absolute top-20 left-1/2 transform -translate-x-1/2 w-1 h-16 bg-gradient-to-b from-white/30 to-transparent"></div>
                 )}
                 
-                <div className="card-celestial p-4 md:p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 group-hover:shadow-2xl">
+                <div className="bg-white/95 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl p-4 md:p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 group-hover:shadow-2xl">
                   <div className="flex flex-col items-center text-center">
                     {/* Icono con animación */}
                     <div className={`bg-${step.color}-100 p-4 rounded-full border-2 border-${step.color}-200 mb-3 md:mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -111,8 +127,8 @@ const Process = () => {
         </div>
 
         {/* Garantías y políticas */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-          <div className="card-celestial p-8 rounded-2xl">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8 relative z-20">
+          <div className="bg-white/95 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl p-8 rounded-2xl">
             <div className="flex items-center mb-4">
               <Shield className="h-8 w-8 text-green-500 mr-3" />
               {/* EDITABLE: Título de política de privacidad */}
@@ -136,7 +152,7 @@ const Process = () => {
             </button>
           </div>
 
-          <div className="card-celestial p-6 md:p-8 rounded-2xl">
+          <div className="bg-white/95 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl p-6 md:p-8 rounded-2xl">
             <div className="flex items-center mb-4">
               <Heart className="h-8 w-8 text-pink-500 mr-3" />
               {/* EDITABLE: Título de misión */}
