@@ -57,7 +57,8 @@ const Process = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
-          filter: 'brightness(0.3)',
+          /* EDITABLE: Transparencia del fondo parallax - Cambia el valor de opacity (0.0 = invisible, 1.0 = completamente visible) */
+          opacity: 0.8, // EDITABLE: Ajusta este valor entre 0.0 y 1.0 para controlar la transparencia
         }}
       ></div>
       
