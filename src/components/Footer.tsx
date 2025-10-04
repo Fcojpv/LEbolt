@@ -1,5 +1,5 @@
 import React from 'react';
-import { Book, Heart, Mail, Phone } from 'lucide-react';
+import { Book, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -63,7 +63,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('solicitar')?.scrollIntoView({ behavior: 'smooth' })}
                   className="font-source text-gray-300 hover:text-celestial-400 transition-colors duration-200"
                 >
-                  Solicitar Libro
+                  Solicitar
                 </button>
               </li>
               <li>
@@ -79,18 +79,136 @@ const Footer = () => {
 
           {/* Contacto */}
           <div>
-            {/* EDITABLE: Título de contacto */}
-            <h3 className="text-lg font-poppins font-semibold mb-4">Contacto</h3>
-            <div className="space-y-3">
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 text-celestial-400 mr-2" />
-                {/* EDITABLE: Email de contacto (debe coincidir con Contact.tsx) */}
-                <span className="font-source text-gray-300 text-sm">peregrinomensajero@gmail.com</span>
+            {/* EDITABLE: Título de contacto con iconos en la misma línea */}
+            <div className="flex flex-row items-center space-x-4 mb-4">
+              <h3 className="text-sm font-poppins font-semibold">Contacto</h3>
+              <div className="flex flex-row items-center space-x-3">
+                {/* Email */}
+                <a 
+                  href="mailto:peregrinomensajero@gmail.com" 
+                  className="flex items-center group hover:text-celestial-400 transition-colors duration-200"
+                  title="Enviar email"
+                >
+                  <i className="fas fa-envelope h-5 w-5 text-celestial-400"></i>
+                </a>
+                
+                {/* WhatsApp */}
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const phoneNumber = "56984413846";
+                    const message = encodeURIComponent("¡Hola! Vi su página web y me interesa recibir información sobre los libros.");
+                    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+                    window.open(whatsappURL, '_blank');
+                  }}
+                  className="flex items-center group hover:text-celestial-300 transition-colors duration-200"
+                  title="Contactar por WhatsApp"
+                >
+                  <i className="fab fa-whatsapp h-5 w-5 text-celestial-400"></i>
+                </a>
+                
+                {/* Teléfono */}
+                <a 
+                  href="tel:+56984413846"
+                  className="flex items-center group hover:text-celestial-300 transition-colors duration-200"
+                  title="Llamar por teléfono"
+                >
+                  <i className="fas fa-phone h-5 w-5 text-celestial-400"></i>
+                </a>
               </div>
-              <div className="flex items-center">
-                <Phone className="h-4 w-4 text-green-400 mr-2" />
-                {/* EDITABLE: Teléfono de contacto (debe coincidir con Contact.tsx) */}
-                <span className="font-source text-gray-300 text-sm">+56 9 8441 3846</span>
+            </div>
+            
+            {/* Información de contacto detallada (solo visible en desktop) */}
+            <div className="hidden sm:block space-y-3">
+              {/* Email */}
+              <a 
+                href="mailto:peregrinomensajero@gmail.com" 
+                className="flex items-center group hover:text-celestial-400 transition-colors duration-200"
+                title="Enviar email"
+              >
+                <i className="fas fa-envelope h-5 w-5 text-celestial-400 mr-3"></i>
+                <span className="font-source text-gray-300 text-sm group-hover:text-celestial-300">peregrinomensajero@gmail.com</span>
+              </a>
+              
+              {/* WhatsApp */}
+              <a 
+                href="#" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const phoneNumber = "56984413846";
+                  const message = encodeURIComponent("¡Hola! Vi su página web y me interesa recibir información sobre los libros.");
+                  const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+                  window.open(whatsappURL, '_blank');
+                }}
+                className="flex items-center group hover:text-celestial-300 transition-colors duration-200"
+                title="Contactar por WhatsApp"
+              >
+                <i className="fab fa-whatsapp h-5 w-5 text-celestial-400 mr-3"></i>
+                <span className="font-source text-gray-300 text-sm group-hover:text-celestial-300">WhatsApp</span>
+              </a>
+              
+              {/* Teléfono */}
+              <a 
+                href="tel:+56984413846"
+                className="flex items-center group hover:text-celestial-300 transition-colors duration-200"
+                title="Llamar por teléfono"
+              >
+                <i className="fas fa-phone h-5 w-5 text-celestial-400 mr-3"></i>
+                <span className="font-source text-gray-300 text-sm group-hover:text-celestial-300">+56 9 8441 3846</span>
+              </a>
+            </div>
+            
+            {/* Redes Sociales */}
+            <div className="mt-6">
+              <div className="flex flex-row items-center space-x-4">
+                <h4 className="text-sm font-poppins font-semibold text-gray-300">Síguenos</h4>
+                <div className="flex items-center space-x-3">
+                  {/* YouTube */}
+                  <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // TODO: Reemplazar con tu canal de YouTube
+                      // window.open('https://youtube.com/@tu-canal', '_blank');
+                      console.log('TODO: Agregar enlace de YouTube');
+                    }}
+                    className="group hover:text-celestial-300 transition-colors duration-200"
+                    title="YouTube"
+                  >
+                    <i className="fab fa-youtube h-5 w-5 text-celestial-400"></i>
+                  </a>
+                  
+                  {/* Facebook */}
+                  <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // TODO: Reemplazar con tu página de Facebook
+                      // window.open('https://facebook.com/tu-pagina', '_blank');
+                      console.log('TODO: Agregar enlace de Facebook');
+                    }}
+                    className="group hover:text-celestial-300 transition-colors duration-200"
+                    title="Facebook"
+                  >
+                    <i className="fab fa-facebook-f h-5 w-5 text-celestial-400"></i>
+                  </a>
+                  
+                  {/* Instagram */}
+                  <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // TODO: Reemplazar con tu perfil de Instagram
+                      // window.open('https://instagram.com/tu-perfil', '_blank');
+                      console.log('TODO: Agregar enlace de Instagram');
+                    }}
+                    className="group hover:text-celestial-300 transition-colors duration-200"
+                    title="Instagram"
+                  >
+                    <i className="fab fa-instagram h-5 w-5 text-celestial-400"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -110,7 +228,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-6 text-center">
+        <div className="mt-6 text-center sm:text-center text-left">
           {/* EDITABLE: Versículo bíblico o cita inspiracional */}
           <p className="font-source text-gray-400 text-sm italic">
             "Dejen todas sus preocupaciones a Dios, porque él se interesa por ustedes." - 1 Pedro 5:7
