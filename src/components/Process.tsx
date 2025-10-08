@@ -128,7 +128,7 @@ const Process = () => {
         {/* Garantías y políticas */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 relative z-20">
           {/* EDITABLE: Transparencia de tarjeta de privacidad - Cambia el valor después de bg-white/ */}
-          <div className="bg-white/70 backdrop-blur-sm border border-celestial-200/30 shadow-lg hover:shadow-xl p-8 rounded-2xl">
+          <div className="bg-white/70 backdrop-blur-sm border border-celestial-200/30 shadow-lg hover:shadow-xl p-6 md:p-5 rounded-2xl">
             <div className="flex items-center mb-4">
               <Shield className="h-8 w-8 text-green-500 mr-3" />
               {/* EDITABLE: Título de política de privacidad */}
@@ -153,7 +153,7 @@ const Process = () => {
           </div>
 
           {/* EDITABLE: Transparencia de tarjeta de misión - Cambia el valor después de bg-white/ */}
-          <div className="bg-white/70 backdrop-blur-sm border border-celestial-200/30 shadow-lg hover:shadow-xl p-6 md:p-8 rounded-2xl">
+          <div className="bg-white/70 backdrop-blur-sm border border-celestial-200/30 shadow-lg hover:shadow-xl p-6 md:p-5 rounded-2xl">
             <div className="flex items-center mb-4">
               <Heart className="h-8 w-8 text-pink-500 mr-3" />
               {/* EDITABLE: Título de misión */}
