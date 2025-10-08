@@ -1,5 +1,4 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Clock, MessageCircleReplyIcon, MessageCircleIcon } from 'lucide-react';
+import { Mail, MapPin, Clock, MessageCircleIcon } from 'lucide-react';
 
 const Contact = () => {
   return (
