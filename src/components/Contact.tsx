@@ -1,6 +1,13 @@
 import { Mail, MapPin, Clock, MessageCircleIcon } from 'lucide-react';
 
 const Contact = () => {
+  // Helper para abrir WhatsApp con mensaje predefinido
+  const phoneNumber = '56984413846';
+  const message = encodeURIComponent('¡Hola! Vi esta pagina sobre los libros y me interesa recibir uno. ¿Podrías enviármelo por favor? 📖');
+  const openWhatsApp = () => {
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappURL, '_blank');
+  };
   return (
     <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-celestial-50 to-dorado-50">
       <div className="max-w-6xl mx-auto">
@@ -37,11 +44,26 @@ const Contact = () => {
                 <div>
                   <h4 className="font-poppins font-semibold text-esperanza-800">Teléfono</h4>
                   {/* EDITABLE: Número de teléfono */}
-                  <p className="font-source text-esperanza-600">+56 9 8441 3846</p>
+                  <button 
+                    onClick={openWhatsApp}
+                    aria-label="Abrir WhatsApp"
+                    title="Escribir por WhatsApp"
+                    className="font-source text-esperanza-600 underline hover:text-esperanza-800 cursor-pointer"
+                  >
+                    +56 9 8441 3846
+                  </button>
                   {/* EDITABLE: Información adicional del teléfono */}
                   <p className="text-sm font-source text-esperanza-500 mt-1">
                       <span className="inline-block w-2 h-2 bg-whatsapp-500 rounded-full animate-pulse"></span>
-                      &nbsp;&nbsp;WhatsApp disponible
+                      &nbsp;&nbsp;
+                      <button 
+                        onClick={openWhatsApp}
+                        aria-label="Abrir WhatsApp"
+                        title="Escribir por WhatsApp"
+                        className="underline hover:text-esperanza-800 cursor-pointer"
+                      >
+                        WhatsApp disponible
+                      </button>
                   </p>
                 </div>
               </div>
