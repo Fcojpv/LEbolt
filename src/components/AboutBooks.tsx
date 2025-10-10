@@ -194,8 +194,8 @@ const AboutBooks = () => {
                 {/* Imagen del libro con lazy loading y funcionalidad de modal */}
                 {book.images && book.images.length > 0 && (
                   <div className="mb-6 flex justify-center">
-                    <div 
-                      className="w-32 h-40 rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl group relative"
+                    <div
+                      className="w-48 h-64 rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl group relative"
                       onClick={() => openImageModal(book.images, 0, book.title)}
                     >
                       <LazyImage
