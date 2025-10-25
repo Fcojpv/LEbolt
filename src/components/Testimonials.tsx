@@ -18,15 +18,15 @@ const Testimonials = () => {
       avatar: "https://pusssafgpuizmhkhzsfb.supabase.co/storage/v1/object/public/Imagenes%20Landing%20Libors/Libros/Testimonios/Francisco.JPG?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face",
       verified: true
     },
-    //{
-    //  name: "Carlos Mendoza",
-    //  location: "Valparaíso, Chile",
-    //  book: "El Conflicto de los Siglos",
-    //  text: "Increíble cómo este libro me ayudó a entender los tiempos que vivimos. Las profecías cobran sentido y tengo esperanza para el futuro, sin importar lo que pase.",
-    //  rating: 5,
-    //  avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face",
-    //  verified: true
-    //},
+    {
+      name: "Señor R. Anonimo",
+      location: "Regions de , Chile",
+      book: "El Conflicto de los Siglos",
+      text: "Este libro 'Conflicto de los Siglos' es el más leído después de la 'Biblia', me ha enseñado a conocer de parte de nuestro Dios, los caminos del bien y el mal, de la verdad y el error a través de los tiempos.",
+      rating: 5,
+      avatar: "https://pusssafgpuizmhkhzsfb.supabase.co/storage/v1/object/public/Imagenes%20Landing%20Libors/Libros/Testimonios/Sr%20R%20Anonimo.jpg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face",
+      verified: true
+    },
     {
       name: "Claudia Anonimo",
       location: "Región de los Lagos, Chile",
