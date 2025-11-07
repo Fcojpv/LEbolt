@@ -130,7 +130,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonios" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="testimonios" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-esperanza-800 mb-6">
@@ -268,7 +268,7 @@ const Testimonials = () => {
           </div>
 
           {/* Dots indicator */}
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-3 space-x-1.5">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -283,8 +283,8 @@ const Testimonials = () => {
           </div>
 
           {/* Swipe instructions */}
-          <div className="text-center mt-4">
-            <p className="text-sm font-source text-esperanza-500 flex items-center justify-center space-x-2">
+          <div className="text-center mt-2">
+            <p className="text-xs font-source text-esperanza-500 flex items-center justify-center space-x-2">
               <span>👈</span>
               <span>Desliza para ver más testimonios</span>
               <span>👉</span>

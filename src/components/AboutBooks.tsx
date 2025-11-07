@@ -111,7 +111,7 @@ const AboutBooks = () => {
   };
   return (
     <>
-      <section id="libros" className="py-6 px-4 sm:px-6 lg:px-8">
+      <section id="libros" className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             {/* EDITABLE: Título de la sección */}
@@ -238,32 +238,32 @@ const AboutBooks = () => {
                 </div>
                 
                 {/* Botones de acción */}
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 relative z-10">
+                <div className="mt-6 flex flex-col sm:flex-row gap-3 relative z-10">
                   {/* Botón de descarga digital */}
                   <button
                     onClick={() => handleDownload(book.downloadUrl, book.title)}
-                    className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-poppins font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                    className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-poppins font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 text-sm"
                   >
-                    <Download className="h-5 w-5" />
+                    <Download className="h-4 w-4" />
                     <span>Descargar PDF</span>
                   </button>
-                  
+
                   {/* Botón para solicitar físico */}
                   <button
                     onClick={() => {
                       const element = document.getElementById('solicitar');
                       if (element) element.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="flex-1 bg-gradient-to-r from-celestial-500 to-celestial-600 hover:from-celestial-600 hover:to-celestial-700 text-white font-poppins font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                    className="flex-1 bg-gradient-to-r from-celestial-500 to-celestial-600 hover:from-celestial-600 hover:to-celestial-700 text-white font-poppins font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 text-sm"
                   >
-                    <ExternalLink className="h-5 w-5" />
+                    <ExternalLink className="h-4 w-4" />
                     <span>Solicitar Físico</span>
                   </button>
                 </div>
-                
+
                  {/* Información adicional sobre las opciones */}
-                 <div className="mt-4 text-center relative z-10">
-                  <p className="text-sm font-source text-esperanza-500">
+                 <div className="mt-3 text-center relative z-10">
+                  <p className="text-xs font-source text-esperanza-500">
                     <span className="block sm:inline">
                       📱 <span className="font-semibold">Digital:</span> Descarga inmediata
                     </span>
