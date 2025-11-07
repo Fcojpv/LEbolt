@@ -238,13 +238,13 @@ const AboutBooks = () => {
                 </div>
                 
                 {/* Botones de acción */}
-                <div className="mt-6 flex flex-col sm:flex-row gap-3 relative z-10">
+                <div className="mt-6 flex flex-col sm:flex-row gap-2 relative z-10">
                   {/* Botón de descarga digital */}
                   <button
                     onClick={() => handleDownload(book.downloadUrl, book.title)}
-                    className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-poppins font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 text-sm"
+                    className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-poppins font-medium py-1.5 px-3 rounded text-xs transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md flex items-center justify-center space-x-1.5"
                   >
-                    <Download className="h-4 w-4" />
+                    <Download className="h-3 w-3" />
                     <span>Descargar PDF</span>
                   </button>
 
@@ -254,9 +254,9 @@ const AboutBooks = () => {
                       const element = document.getElementById('solicitar');
                       if (element) element.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="flex-1 bg-gradient-to-r from-celestial-500 to-celestial-600 hover:from-celestial-600 hover:to-celestial-700 text-white font-poppins font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 text-sm"
+                    className="flex-1 bg-gradient-to-r from-celestial-500 to-celestial-600 hover:from-celestial-600 hover:to-celestial-700 text-white font-poppins font-medium py-1.5 px-3 rounded text-xs transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md flex items-center justify-center space-x-1.5"
                   >
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="h-3 w-3" />
                     <span>Solicitar Físico</span>
                   </button>
                 </div>
