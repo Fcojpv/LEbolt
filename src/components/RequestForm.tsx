@@ -372,7 +372,7 @@ const RequestForm = () => {
   
   if (submitStatus === 'success') {
     return (
-      <section id="solicitar" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-50 to-celestial-50">
+      <section id="solicitar" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-50 to-celestial-50">
         <div className="max-w-2xl mx-auto text-center">
           <div className="card-celestial p-10 rounded-2xl animate-fade-in">
             <CheckCircle className="h-20 w-20 text-green-500 mx-auto mb-8 animate-bounce-gentle" />
@@ -405,7 +405,7 @@ const RequestForm = () => {
   // ========================================
   
   return (
-    <section id="solicitar" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-celestial-50 to-dorado-50">
+    <section id="solicitar" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-celestial-50 to-dorado-50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-esperanza-800 mb-6">
