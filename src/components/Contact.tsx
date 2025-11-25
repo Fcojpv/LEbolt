@@ -1,4 +1,44 @@
 import { Mail, MapPin, Clock, MessageCircleIcon } from 'lucide-react';
+import { useState } from 'react';
+
+const ExpandableText = ({ text }: { text: string }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const paragraphs = text.split('\n\n');
+  const isLongText = paragraphs.length > 1;
+
+  if (!isLongText) {
+    return <p>{text}</p>;
+  }
+
+  const displayedText = isExpanded
+    ? text
+    : paragraphs.slice(0, 1).join('\n\n');
+
+  return (
+    <div className="space-y-4">
+      <div className="whitespace-pre-wrap text-esperanza-600">
+        {displayedText}
+      </div>
+      {!isExpanded && (
+        <button
+          onClick={() => setIsExpanded(true)}
+          className="text-celestial-600 hover:text-celestial-700 font-medium text-sm underline"
+        >
+          ...mostrar más
+        </button>
+      )}
+      {isExpanded && (
+        <button
+          onClick={() => setIsExpanded(false)}
+          className="text-celestial-600 hover:text-celestial-700 font-medium text-sm underline"
+        >
+          mostrar menos
+        </button>
+      )}
+    </div>
+  );
+};
 
 const Contact = () => {
   // Helper para abrir WhatsApp con mensaje predefinido
@@ -98,26 +138,38 @@ const Contact = () => {
             <h3 className="text-2xl font-poppins font-bold text-esperanza-800 mb-6">
               Nuestra Misión
             </h3>
-            
-            <div className="space-y-4 font-source text-esperanza-600 leading-relaxed">
+
+            <div className="md:space-y-4 font-source leading-relaxed">
               {/* EDITABLE: Párrafos de la misión */}
-              <p>
-                En un mundo lleno de incertidumbre y dolor, creemos que cada persona 
-                puede encontrar esperanza, paz y propósito. Estos libros han sido 
-                una fuente de luz para millones de personas.
-              </p>
-              
-              <p>
-                No buscamos lucro ni promocionamos ninguna denominación específica. 
-                Nuestro único deseo es que encuentres las respuestas que tu corazón 
-                busca y experimentes la transformación que solo la verdad (Cristro) puede traer a tu corazón.
-              </p>
-              
-              <p>
-                Cada libro que enviamos es un acto de amor y esperanza. Creemos que 
-                en sus páginas encontrarás no solo conocimiento, sino la Esperanza que 
-                sobrepasa todo entendimiento.
-              </p>
+              <div className="hidden md:block space-y-4 text-esperanza-600">
+                <p>
+                  En un mundo lleno de incertidumbre y dolor, creemos que cada persona
+                  puede encontrar esperanza, paz y propósito. Estos libros han sido
+                  una fuente de luz para millones de personas.
+                </p>
+
+                <p>
+                  No buscamos lucro ni promocionamos ninguna denominación específica.
+                  Nuestro único deseo es que encuentres las respuestas que tu corazón
+                  busca y experimentes la transformación que solo la verdad (Cristro) puede traer a tu corazón.
+                </p>
+
+                <p>
+                  Cada libro que enviamos es un acto de amor y esperanza. Creemos que
+                  en sus páginas encontrarás no solo conocimiento, sino la Esperanza que
+                  sobrepasa todo entendimiento.
+                </p>
+              </div>
+
+              <div className="md:hidden">
+                <ExpandableText
+                  text={`En un mundo lleno de incertidumbre y dolor, creemos que cada persona puede encontrar esperanza, paz y propósito. Estos libros han sido una fuente de luz para millones de personas.
+
+No buscamos lucro ni promocionamos ninguna denominación específica. Nuestro único deseo es que encuentres las respuestas que tu corazón busca y experimentes la transformación que solo la verdad (Cristro) puede traer a tu corazón.
+
+Cada libro que enviamos es un acto de amor y esperanza. Creemos que en sus páginas encontrarás no solo conocimiento, sino la Esperanza que sobrepasa todo entendimiento.`}
+                />
+              </div>
             </div>
 
             <div className="mt-8 p-6 bg-gradient-dorado rounded-xl border border-dorado-200">
