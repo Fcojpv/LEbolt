@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Book, Menu, X, Shield, Users, Clock, Bookmark, BookMarked } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, Shield, Users, Clock, BookMarked, Home, BookOpen, MessageSquare, FileText, HelpCircle, Mail } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,12 +23,12 @@ const Header = () => {
   };
 
   const menuItems = [
-    { id: 'inicio', label: 'Inicio', icon: '🏠' },
-    { id: 'libros', label: 'Libros', icon: '📚' },
-    { id: 'testimonios', label: 'Testimonios', icon: '💬' },
-    { id: 'solicitar', label: 'Solicitar', icon: '📝' },
-    { id: 'preguntas', label: 'Preguntas', icon: '❓' },
-    { id: 'contacto', label: 'Contacto', icon: '📞' }
+    { id: 'inicio', label: 'Inicio', icon: Home },
+    { id: 'libros', label: 'Libros', icon: BookOpen },
+    { id: 'testimonios', label: 'Testimonios', icon: MessageSquare },
+    { id: 'solicitar', label: 'Solicitar', icon: FileText },
+    { id: 'preguntas', label: 'Preguntas', icon: HelpCircle },
+    { id: 'contacto', label: 'Contacto', icon: Mail }
   ];
 
   return (
@@ -97,44 +97,67 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-110 opacity-100' : 'max-h-0 opacity-0'
+        {/* Mobile Navigation - Menú Lateral */}
+        <div className={`md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}>
-          <nav className="py-1 space-y-1">
-            {menuItems.map((item, index) => (
-              <button 
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`w-full text-left font-source text-esperanza-600 hover:text-celestial-500 hover:bg-celestial-50 transition-all duration-200 p-4 rounded-xl flex items-center space-x-3 mobile-touch-target animate-slide-in-mobile`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <span className="text-xl">{item.icon}</span>
-                <span className="font-semibold">{item.label}</span>
-              </button>
-            ))}
-            
-            {/* CTA especial en menú móvil */}
-            <div className="pt-4 border-t border-celestial-100 mt-4">
+          {/* Overlay semi-transparente con blur */}
+          <div 
+            className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+          
+          {/* Panel lateral del menú */}
+          <div className={`absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white/95 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}>
+            {/* Header del menú */}
+            <div className="flex items-center justify-between p-6 border-b border-celestial-100">
+              <h2 className="text-2xl font-poppins font-bold text-esperanza-800">Menu</h2>
               <button
-                onClick={() => scrollToSection('solicitar')}
-                className="w-full btn-celestial py-4 px-6 rounded-xl font-poppins font-semibold text-center flex items-center justify-center space-x-2"
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 rounded-xl text-esperanza-600 hover:text-celestial-500 hover:bg-celestial-50 transition-all duration-200"
               >
-                <span>📖</span>
-                <span>Solicitar tu libro gratuito</span>
+                <X className="h-6 w-6" />
               </button>
             </div>
-          </nav>
+
+            {/* Navegación principal */}
+            <nav className="py-4">
+              {menuItems.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <button 
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="w-full text-left font-source text-esperanza-700 hover:text-celestial-500 hover:bg-celestial-50 transition-all duration-200 py-4 px-6 flex items-center space-x-4 group"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <IconComponent className="h-5 w-5 text-esperanza-500 group-hover:text-celestial-500 transition-colors duration-200" />
+                    <span className="font-semibold text-lg">{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
+
+            {/* Footer del menú */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-celestial-100 bg-celestial-50/50">
+              <div className="space-y-3">
+                <button className="w-full text-left text-esperanza-600 hover:text-celestial-500 transition-colors duration-200 py-2 text-sm">
+                  Términos de Servicio
+                </button>
+                <button className="w-full text-left text-esperanza-600 hover:text-celestial-500 transition-colors duration-200 py-2 text-sm">
+                  Política de Privacidad
+                </button>
+                <button className="w-full text-left text-esperanza-600 hover:text-celestial-500 transition-colors duration-200 py-2 text-sm font-semibold">
+                  Cerrar Sesión
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Overlay para cerrar menú */}
-      {isMenuOpen && (
-        <div 
-          className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[-1]"
-          onClick={() => setIsMenuOpen(false)}
-        ></div>
-      )}
     </header>
   );
 };
