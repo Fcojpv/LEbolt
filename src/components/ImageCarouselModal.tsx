@@ -179,15 +179,15 @@ const ImageCarouselModal: React.FC<ImageCarouselModalProps> = ({
 
           {/* Indicadores de puntos - Solo si hay más de una imagen */}
           {images.length > 1 && (
-            <div className="flex justify-center space-x-2 p-4 bg-gray-50">
+            <div className="flex justify-center space-x-1 p-4 bg-gray-50">
               {images.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`transition-all duration-200 mobile-touch-target ${
+                  className={`transition-all duration-200 ${
                     index === currentIndex
-                      ? 'w-8 h-3 bg-celestial-500 rounded-full'
-                      : 'w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400'
+                      ? 'w-2 h-2 bg-celestial-500 rounded-full'
+                      : 'w-1.5 h-1.5 bg-gray-300 rounded-full hover:bg-gray-400'
                   }`}
                   aria-label={`Ir a imagen ${index + 1}`}
                 />
