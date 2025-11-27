@@ -428,26 +428,10 @@ const RequestForm = () => {
               </span>
             </div>
             <div className="w-full bg-celestial-100 rounded-full h-3">
-              <div 
+              <div
                 className="bg-gradient-to-r from-celestial-400 to-green-400 h-3 rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${formProgress}%` }}
               ></div>
-            </div>
-          </div>
-
-          {/* Indicadores de seguridad */}
-          <div className="flex justify-center items-center gap-16 mb-10 p-8 bg-gradient-to-r from-green-50 to-celestial-50 rounded-xl border border-green-200">
-            <div className="flex flex-col items-center">
-              <Shield className="h-6 w-6 text-gray-400 mb-1" />
-              <span className="font-source text-sm text-gray-500">Confiable</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <Lock className="h-6 w-6 text-gray-400 mb-1" />
-              <span className="font-source text-sm text-gray-500">Seguro</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <Heart className="h-6 w-6 text-gray-400 mb-1 fill-current" />
-              <span className="font-source text-sm text-gray-500">Amor</span>
             </div>
           </div>
 
@@ -826,6 +810,24 @@ const RequestForm = () => {
               <p>⏱️ Procesamiento en 24-48 horas</p>
             </div>
           </form>
+        </div>
+
+        {/* Indicadores de seguridad */}
+        <div>
+          <div className="flex justify-center items-center gap-16 mt-10 mb-10">
+            <div className="flex flex-col items-center">
+              <Shield className="h-6 w-6 text-gray-400 mb-1" />
+              <span className="font-source text-sm text-gray-500">Confiable</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <Lock className="h-6 w-6 text-gray-400 mb-1" />
+              <span className="font-source text-sm text-gray-500">Seguro</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <Heart className="h-6 w-6 text-gray-400 mb-1 fill-current" />
+              <span className="font-source text-sm text-gray-500">Amor</span>
+            </div>
+          </div>
         </div>
       </div>
               {/* Tarjeta WhatsApp - Alternativa al formulario */}
