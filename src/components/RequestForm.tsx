@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, CheckCircle, AlertCircle, Shield, Lock, Eye, EyeOff, MapPin, Phone, Mail, User, MessageCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Shield, Lock, Eye, EyeOff, MapPin, Phone, Mail, User, MessageCircle, Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const RequestForm = () => {
@@ -436,18 +436,18 @@ const RequestForm = () => {
           </div>
 
           {/* Indicadores de seguridad */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10 p-6 bg-gradient-to-r from-green-50 to-celestial-50 rounded-xl border border-green-200">
-            <div className="flex items-center text-green-600">
-              <Shield className="h-5 w-5 mr-2" />
-              <span className="font-source font-semibold">Datos protegidos</span>
+          <div className="flex justify-center items-center gap-12 mb-10 p-8 bg-gradient-to-r from-green-50 to-celestial-50 rounded-xl border border-green-200">
+            <div className="flex flex-col items-center text-center">
+              <Shield className="h-10 w-10 text-green-600 mb-2" />
+              <span className="font-source font-semibold text-esperanza-800">Confiable</span>
             </div>
-            <div className="flex items-center text-celestial-600">
-              <Lock className="h-5 w-5 mr-2" />
-              <span className="font-source font-semibold">Conexión segura</span>
+            <div className="flex flex-col items-center text-center">
+              <Lock className="h-10 w-10 text-celestial-600 mb-2" />
+              <span className="font-source font-semibold text-esperanza-800">Seguro</span>
             </div>
-            <div className="flex items-center text-dorado-600">
-              <CheckCircle className="h-5 w-5 mr-2" />
-              <span className="font-source font-semibold">Sin publicidad</span>
+            <div className="flex flex-col items-center text-center">
+              <Heart className="h-10 w-10 text-red-500 mb-2 fill-current" />
+              <span className="font-source font-semibold text-esperanza-800">Amor</span>
             </div>
           </div>
 
