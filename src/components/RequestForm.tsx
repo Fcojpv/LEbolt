@@ -436,18 +436,18 @@ const RequestForm = () => {
           </div>
 
           {/* Indicadores de seguridad */}
-          <div className="flex justify-center items-center gap-12 mb-10 p-8 bg-gradient-to-r from-green-50 to-celestial-50 rounded-xl border border-green-200">
-            <div className="flex flex-col items-center text-center">
-              <Shield className="h-10 w-10 text-green-600 mb-2" />
-              <span className="font-source font-semibold text-esperanza-800">Confiable</span>
+          <div className="flex justify-center items-center gap-16 mb-10 p-8 bg-gradient-to-r from-green-50 to-celestial-50 rounded-xl border border-green-200">
+            <div className="flex flex-col items-center">
+              <Shield className="h-6 w-6 text-gray-400 mb-1" />
+              <span className="font-source text-sm text-gray-500">Confiable</span>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <Lock className="h-10 w-10 text-celestial-600 mb-2" />
-              <span className="font-source font-semibold text-esperanza-800">Seguro</span>
+            <div className="flex flex-col items-center">
+              <Lock className="h-6 w-6 text-gray-400 mb-1" />
+              <span className="font-source text-sm text-gray-500">Seguro</span>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <Heart className="h-10 w-10 text-red-500 mb-2 fill-current" />
-              <span className="font-source font-semibold text-esperanza-800">Amor</span>
+            <div className="flex flex-col items-center">
+              <Heart className="h-6 w-6 text-gray-400 mb-1 fill-current" />
+              <span className="font-source text-sm text-gray-500">Amor</span>
             </div>
           </div>
 
