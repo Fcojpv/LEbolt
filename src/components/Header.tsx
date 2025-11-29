@@ -108,7 +108,7 @@ const Header = () => {
           ></div>
           
           {/* Panel lateral del menú */}
-          <div className={`absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white/95 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-in-out ${
+          <div className={`absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white/50 backdrop-blur-2xl shadow-2xl transform transition-transform duration-300 ease-in-out ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}>
             {/* Header del menú */}
@@ -130,7 +130,7 @@ const Header = () => {
                   <button 
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="w-full text-left font-source text-esperanza-700 hover:text-celestial-500 hover:bg-celestial-50 transition-all duration-200 py-4 px-6 flex items-center space-x-4 group"
+                    className="w-full text-left font-source text-esperanza-700 hover:text-celestial-500 hover:bg-celestial-50 transition-all duration-200 py-4 px-6 flex items-center space-x-4 group animate-slide-in-mobile"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <IconComponent className="h-5 w-5 text-esperanza-500 group-hover:text-celestial-500 transition-colors duration-200" />
@@ -140,20 +140,6 @@ const Header = () => {
               })}
             </nav>
 
-            {/* Footer del menú */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-celestial-100 bg-celestial-50/50">
-              <div className="space-y-3">
-                <button className="w-full text-left text-esperanza-600 hover:text-celestial-500 transition-colors duration-200 py-2 text-sm">
-                  Términos de Servicio
-                </button>
-                <button className="w-full text-left text-esperanza-600 hover:text-celestial-500 transition-colors duration-200 py-2 text-sm">
-                  Política de Privacidad
-                </button>
-                <button className="w-full text-left text-esperanza-600 hover:text-celestial-500 transition-colors duration-200 py-2 text-sm font-semibold">
-                  Cerrar Sesión
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
